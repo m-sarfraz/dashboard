@@ -1,0 +1,292 @@
+
+
+body{
+    font-family: 'Karla', sans-serif;
+    color: rgb(51, 51, 51);
+    height: 100%;
+    width: 100%;
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    background-position: center top;
+    background-attachment: fixed;
+}
+
+
+.not-typed{
+    font-weight: 600;
+    font-size: 120px;
+    line-height: 1.2;
+}
+
+.home-title{
+    margin-top: 100px;
+    margin-bottom: 600px;
+    height: 160px;
+}
+
+.vvl{
+    color: #007bff;
+}
+.logo-img {
+    position: relative;
+    width: 200px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.typed{
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 1.2;
+}
+
+.come{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: center;
+    margin: 5% ;
+}
+
+.labeli{
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.inputi{
+    display: block;
+    width: 100%;
+    color : rgb(51, 51, 51);
+    font-size: 30px;
+    line-height: 38px;
+    padding: 0px 26px 16px;
+    border-style: none;
+    outline: none;
+    border-radius: 3px;
+    /*border-bottom: solid;*/
+    background: none;
+
+}
+
+option {
+    background-color: rgb(255, 255, 255);
+}
+
+.formi{
+    margin-bottom: 200px;
+    font-size: 30px;
+    line-height: 38px;
+    opacity: 0.2;
+}
+
+.dicidi{
+    font-size: 30px;
+    line-height: 38px;
+}
+
+.bani{
+    padding-bottom: 200px;
+}
+
+.hidi{
+    padding-bottom: 0;
+    display: none;
+}
+
+.separator{
+    background-color: #007bff;
+    width: 100%;
+    height: 0px;
+    border: 2px;
+    border-style: solid;
+    border-color: #007bff;
+    border-radius: 5px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: color 9999s ease-out, background-color 9999s ease-out ;
+    transition-delay: 9999s;
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+}
+
+.checkButton{
+    float: left;
+    width: 20%;
+    padding: 8px ;
+    margin-bottom: 1px;
+}
+
+.custom-button {
+    background-color: rgb(2,165,220);
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px;
+    min-height: 48px;
+    color: rgb(255, 255, 255);
+    outline: none;
+    border-width: 1px;
+    border-style: solid;
+    border-image: initial;
+    padding: 6px 18px 8px;
+    border-color: transparent;
+    border-radius: 4px;
+    font-size: 25px ;
+}
+.custom-button:hover {
+    background-color: rgb(46, 189, 236);
+
+}
+.checkInput{
+    padding: 10px;
+    float: left;
+    width: 80%;
+}
+
+.checkDiv{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+
+a{
+    color: #fff !important;
+}
+
+.custom-switch {
+    display: inline-block !important;
+    margin-left: 50px;
+}
+
+label.error {
+    color: red;
+    font-size: 16px;
+}
+
+p.error{
+    color: red;
+    font-size: 16px;
+}
+
+.succ{
+    color: green;
+    font-size: 16px;
+}
+
+.fix-width {
+    width: 150px;
+}
+
+/* CSS Spinner */ 
+
+.spinner {
+    -webkit-animation: rotator 1.4s linear infinite;
+            animation: rotator 1.4s linear infinite;
+  }
+  
+  @-webkit-keyframes rotator {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(270deg);
+              transform: rotate(270deg);
+    }
+  }
+  
+  @keyframes rotator {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(270deg);
+              transform: rotate(270deg);
+    }
+  }
+  .path {
+    stroke-dasharray: 187;
+    stroke-dashoffset: 0;
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+            animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+  }
+  
+  @-webkit-keyframes colors {
+    0% {
+      stroke: #fff;
+    }
+    25% {
+      stroke: #fff;
+    }
+    50% {
+      stroke: #fff;
+    }
+    75% {
+      stroke: #fff;
+    }
+    100% {
+      stroke: #fff;
+    }
+  }
+  
+  @keyframes colors {
+    0% {
+      stroke: #fff;
+    }
+    25% {
+      stroke: #fff;
+    }
+    50% {
+      stroke: #fff;
+    }
+    75% {
+      stroke: #fff;
+    }
+    100% {
+      stroke: #fff;
+    }
+  }
+  @-webkit-keyframes dash {
+    0% {
+      stroke-dashoffset: 187;
+    }
+    50% {
+      stroke-dashoffset: 46.75;
+      -webkit-transform: rotate(135deg);
+              transform: rotate(135deg);
+    }
+    100% {
+      stroke-dashoffset: 187;
+      -webkit-transform: rotate(450deg);
+              transform: rotate(450deg);
+    }
+  }
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: 187;
+    }
+    50% {
+      stroke-dashoffset: 46.75;
+      -webkit-transform: rotate(135deg);
+              transform: rotate(135deg);
+    }
+    100% {
+      stroke-dashoffset: 187;
+      -webkit-transform: rotate(450deg);
+              transform: rotate(450deg);
+    }
+  }
+  

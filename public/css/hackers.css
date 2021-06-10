@@ -1,0 +1,43 @@
+body {
+    background-color: #f8f9fe;  
+}
+.action_on_hacker{
+    cursor: pointer;
+}
+.icon-cnt{
+    width: 40px;
+}
+
+
+.navbar-vertical .navbar-nav .nav-link > svg {
+    font-size: .9375rem;
+    line-height: 1.5rem;
+    min-width: 2.25rem;
+}
+
+.nav-link svg.ni {
+    position: relative;
+    top: 2px;
+}
+
+h1 {
+    font-family: 'Karla', sans-serif !important;
+}
+
+table > * {
+    font-size: 20px ; 
+}
+
+.btn-group {
+    margin-left: 150px;
+}
+
+hr {
+    color : black ; 
+    width : 50% ; 
+}
+
+
+li {
+    white-space: normal !important ;
+}
