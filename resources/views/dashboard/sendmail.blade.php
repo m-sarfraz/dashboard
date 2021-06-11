@@ -8,11 +8,6 @@
 
 @section('content')
     <div class="container  pt-3 pb-7">
-    @if(session()->has('message'))
-    <div class="alert alert-success">
-        {{ session()->get('message') }}
-    </div>
-@endif
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <h1 class="text-center font-weight-900 text-xl"> Hackers </h1>
@@ -52,9 +47,9 @@
                         <td>
                         {{$hacker-> github }}
                         </td>
-                        <td>
-                       <a href=" {{ route('mailWelcome' , ['id'=>$hacker->id])  }} ">  <Button:submit  style="border-radius: 600px;" class= "btn btn-danger" class="fa fa-trash"> Send Warning Mail</Button:submit> </a>
-                       <a href=" {{ route('mWelcome' , ['id'=>$hacker->id])  }}">  <Button:submit class= "btn btn-primary" style="border-radius: 600px;" class="fa fa-trash"> Send Message</Button:submit> </a>
+                        <td> 
+                       <a href="">  <Button:submit class= "btn btn-primary" class="fa fa-trash"> Send Email</Button:submit> </a>
+                       <a href="">  <Button:submit class= "btn btn-primary" class="fa fa-trash"> Send Message</Button:submit> </a>
                         </td>
                     </tr>
                 @endforeach

@@ -5,12 +5,15 @@ namespace App\Http\Controllers\Admin;
 use App\Hacker;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Jobs\SendWaitingEmails;
 use App\Jobs\SendAcceptedEmails;
 use App\Jobs\SendRejectedEmails;
+use App\Mail\WelcomeMail;
+use App\Notifications\InvoicePaid;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\Notification;
 class MailingController extends Controller
 {
 
@@ -43,6 +46,7 @@ class MailingController extends Controller
     public function send(Request $request)
     {
         $mailType = json_decode($request->getContent())->MailType;
+       
         switch ($mailType) {
             case 'accepted_mail':
                 $this->sendEmailsAccepted();
@@ -66,6 +70,37 @@ class MailingController extends Controller
     /**
      *Send emails to all accepted hackers that haven't received an accepted email yet
      */
+    public function mailWelcome (Request $request, $id) {
+        // return $id;
+        $mail = Hacker::where('id',$id)->first();
+        // return $mail->email;
+        Mail::to($mail->email)->send(new WelcomeMail());
+        return redirect()->back()->with('message', 'Mail has been sent bro!');
+
+    }
+    public function mWelcome (Request $request, $id) {
+        $mail = Hacker::where('id',$id)->first();
+
+        $basic  = new \Vonage\Client\Credentials\Basic("2e6032b9", "n35m1JCgDaDJvyds");
+        $client = new \Vonage\Client($basic);
+        $response = $client->sms()->send(
+            new \Vonage\SMS\Message\SMS( $mail->phone_number , BRAND_NAME, 'Hello'.$mail->first_name)
+        );
+        
+        $message = $response->current();
+        
+        if ($message->getStatus() == 0) {
+            echo "The message was sent successfully\n";
+        } else {
+            echo "The message failed with status: " . $message->getStatus() . "\n";
+        }
+
+        // $invoice = 400;
+        // $mail = Hacker::where('id',$id)->get();
+        // Notification::route('wMail' ,$mail[0]['phone_number'])->notify(new InvoicePaid($invoice));
+        // return redirect()->back()->with('message', 'Message has been sent bro!');
+
+    }
     protected function sendEmailsAccepted()
     {
         $acceptedHackers = Hacker::all()

@@ -1,5 +1,5 @@
 <?php
-
+use App\Mail\WelcomeMail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,6 +58,16 @@ Route::group( ['middleware' => 'auth'], function() {
     Route::post('/admin/hackers/checkin/{hacker}', 'Admin\CheckinController@update')->name('checkHacker');
 
     Route::get('/admin/mailing', 'Admin\MailingController@index')->name('mailing');
+    Route::post('/admin/mailWelcome/{id}', 'Admin\MailingController@mailWelcome')->name('mailWelcome');
+    Route::get('/admin/mailWelcome', function () {
+        Mail::to('muhammadsarfraz531@gmail.com')->send(new WelcomeMail());
+        return new WelcomeMail();
+    });
+    
+
+
+    Route::get('/admin/mailWelcome/{id}', 'Admin\MailingController@mailWelcome')->name('mailWelcome');
+    Route::get('/admin/mWelcome/{id}', 'Admin\MailingController@mWelcome')->name('mWelcome');
     Route::post('/admin/mailing', 'Admin\MailingController@send')->name('sendMail');
 
     Route::get('/admin/settings', 'Admin\SettingsController@index')->name('settings');
